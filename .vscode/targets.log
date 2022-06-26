@@ -7,10 +7,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `gnl/get_next_line.o', needed by `so_long'.  Stop.
+make: *** No rule to make target `gnl/get_next_line.o', needed by `so_long'
+.  Stop.
 
 
-# Make data base, printed on Sun Jun 26 00:04:53 2022
+# Make data base, printed on Sun Jun 26 00:48:47 2022
 
 # Variables
 
@@ -47,9 +48,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 20)
 CFILES = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c ./ft_printf/ft_functions.c ./ft_printf/ft_functions2.c ./ft_printf/ft_printf.c ./srcs/ft_map.c ./srcs/ft_check_error.c ./srcs/ft_check_map_elements.c ./srcs/mlx.c ./srcs/mouvement.c ./srcs/mlx_loop.c ./srcs/so_long.c
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cfmr0033n6/T/vscode-ipc-d518f6ca-0712-41c2-9095-69eb0538409e.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cfmr0033n6/T/vscode-ipc-65a4e218-7c53-4328-9c64-07419f9e1aba.sock
 # environment
 VSCODE_CWD = /
+# environment
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.XlT9zNdQ1M/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -61,7 +64,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.XktNllWEP0/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.hHRRJkTFy1/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 44)
@@ -77,7 +80,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/sel-jala
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/sel-jala/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
 # environment
@@ -115,7 +118,7 @@ LESS = -R
 # makefile (from `Makefile', line 26)
 CFILES_BONUS = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c ./ft_printf/ft_functions.c ./ft_printf/ft_functions2.c ./ft_printf/ft_printf.c ./bonus/ft_check_error_bonus.c ./bonus/ft_check_map_elements_bonus.c ./bonus/ft_map_bonus.c ./bonus/mlx_bonus.c ./bonus/mlx_loop_bonus.c ./bonus/mouvement_bonus.c ./bonus/so_long_bonus.c ./bonus/dollar_bonus.c ./bonus/enemy_bonus.c ./bonus/ft_move_enemy.c ./bonus/ft_print_move.c ./bonus/utils_bonus.c ./bonus/mlx_destroy.c
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # makefile (from `Makefile', line 15)
 INC = so_long.h
 # default
@@ -133,7 +136,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2140
+XPC_SERVICE_NAME = com.microsoft.VSCode.1232
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -163,9 +166,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9810
+VSCODE_PID = 29314
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=1/109=1%
+# Load=76/1024=7%, Rehash=0, Collisions=1/110=1%
 
 # Pattern-specific Variable Values
 
@@ -173,10 +176,10 @@ VSCODE_PID = 9810
 
 # Directories
 
-# . (device 16777225, inode 1039738): 12 files, 1 impossibilities.
-# gnl (device 16777225, inode 1040051): 3 files, no impossibilities so far.
+# . (device 16777227, inode 1039738): 13 files, 1 impossibilities.
+# gnl (device 16777227, inode 1040051): 3 files, no impossibilities so far.
 
-# 15 files, 1 impossibilities in 2 directories.
+# 16 files, 1 impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -312,11 +315,11 @@ bonus/dollar_bonus.o:
 # Not a target:
 bonus/ft_move_enemy.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
- 
 srcs/ft_check_error.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -428,6 +431,6 @@ srcs/ft_check_map_elements.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jun 26 00:04:54 2022
+# Finished Make data base on Sun Jun 26 00:48:47 2022
 
  

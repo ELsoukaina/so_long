@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmoussam <nmoussam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 13:17:04 by nmoussam          #+#    #+#             */
-/*   Updated: 2022/05/25 20:53:24 by nmoussam         ###   ########.fr       */
+/*   Created: 2022/06/26 20:17:38 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/06/26 22:15:36 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	main(int argc, char **argv)
 
 	data = malloc(sizeof(t_map));
 	data->player_pos = 0;
+	data->nb_move = 0;
 	if (argc != 2)
 		ft_print_message_error("Error\nInvalide number of arguments");
 	if (ft_check_file(argv[1]) == 0)
-		ft_print_message_error("Error\nThe map filename is invalid.");
+		ft_print_message_error("Error\n Invalid filename");
 	data->nb_lines = ft_nb_lines_of_map(argv[1]);
 	data->map = ft_get_map(argv[1], data->nb_lines);
 	ft_map_is_surrounded_by_walls(data->map, data->nb_lines);
@@ -35,6 +36,5 @@ int	main(int argc, char **argv)
 	ft_add_image_to_window(data);
 	loop_images(data);
 	ft_free(data);
-
 	return (0);
 }

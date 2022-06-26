@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 18:57:31 by nmoussam          #+#    #+#             */
-/*   Updated: 2022/06/26 00:15:18 by sel-jala         ###   ########.fr       */
+/*   Created: 2022/06/26 20:19:51 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/06/26 20:19:52 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,3 @@ char	*ft_strchr(const char *s, int c)
 		return (pchr);
 	return (NULL);
 }
-
-
-

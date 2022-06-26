@@ -1,11 +1,12 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/sel-jala/Desktop/so_long13'
 cc    -c -o gnl/get_next_line.o gnl/get_next_line.c
+ 
 cc    -c -o gnl/get_next_line_utils.o gnl/get_next_line_utils.c
 cc    -c -o ft_printf/ft_functions.o ft_printf/ft_functions.c
 cc    -c -o ft_printf/ft_functions2.o ft_printf/ft_functions2.c
- 
 cc    -c -o ft_printf/ft_printf.o ft_printf/ft_printf.c
+ 
 cc    -c -o srcs/ft_map.o srcs/ft_map.c
 cc    -c -o srcs/ft_check_error.o srcs/ft_check_error.c
 cc    -c -o srcs/ft_check_map_elements.o srcs/ft_check_map_elements.c

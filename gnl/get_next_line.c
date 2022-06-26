@@ -3,85 +3,116 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmoussam <nmoussam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 19:00:32 by nmoussam          #+#    #+#             */
-/*   Updated: 2022/05/25 19:40:32 by nmoussam         ###   ########.fr       */
+/*   Created: 2022/03/22 22:16:31 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/06/26 21:06:08 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_rest(char *str)
+char	*ft_free_gnl(char	*res, char	*buffer)
 {
-	char	*new_str;
+	char	*temp;
+
+	temp = ft_strjoin(res, buffer);
+	return (temp);
+}
+
+char	*readnext(char	*res)
+{
 	int		i;
+	int		j;
+	char	*next;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	j = 0;
+	while (res[i] && res[i] != '\n')
 		i++;
-	if (!str[i])
+	if (!res[i])
 	{
-		free(str);
+		free(res);
 		return (NULL);
 	}
-	new_str = ft_substr(str, i + 1, (ft_strlen(str) - i) + 1);
-	free(str);
-	return (new_str);
-}
-
-char	*get_line(char *str)
-{
-	char	*new_str;
-	int		i;
-
-	if (!str[0])
-		return (NULL);
-	i = 0;
-	while (str[i] && str[i] != '\n')
-		i++;
-	new_str = ft_substr(str, 0, i + 1);
-	return (new_str);
-}
-
-char	*ft_read(char *string, int fd)
-{
-	char	*to_read;
-	int		i;
-
-	to_read = (char *)malloc(BUFFER_SIZE + 1);
-	if (!to_read)
-		return (NULL);
-	i = 1;
-	while (check_new_line(string) == 0 && i != 0)
+	next = ft_calloc(ft_strlen(res) - i + 1, sizeof(char));
+	i++;
+	while (res[i])
 	{
-		i = read(fd, to_read, BUFFER_SIZE);
-		if (i == -1)
+		next[j++] = res[i++];
+	}
+	next[j] = '\0';
+	free(res);
+	return (next);
+}
+
+char	*readline(char	*res)
+{
+	int		i;
+	char	*line;
+
+	i = 0;
+	if (!res[i])
+		return (NULL);
+	while (res[i] && res[i] != '\n')
+		i++;
+	line = ft_calloc(i + 2, sizeof(char));
+	i = 0;
+	while (res[i] && res[i] != '\n')
+	{
+		line[i] = res[i];
+		i++;
+	}
+	if (res[i] == '\n')
+	{
+		line[i] = '\n';
+		i++;
+	}
+	line[i] = '\0';
+	return (line);
+}
+
+char	*readfile(int fd, char	*res)
+{
+	int		byteread;
+	char	*buffer;
+
+	byteread = 1;
+	if (!res)
+		res = ft_calloc(1, 1);
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!buffer)
+	{
+		free(buffer);
+		return (NULL);
+	}
+	while (!ft_strchr(buffer, '\n') && byteread > 0)
+	{
+		byteread = read(fd, buffer, BUFFER_SIZE);
+		if (byteread == -1)
 		{
-			free(to_read);
+			free(buffer);
 			return (NULL);
 		}
-		to_read[i] = '\0';
-		string = ft_strjoin(string, to_read);
+		buffer[byteread] = '\0';
+		res = ft_free_gnl(res, buffer);
 	}
-	free(to_read);
-	return (string);
+	free(buffer);
+	return (res);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
-	char		*line;
+	static char		*res;
+	char			*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (0);
+	res = readfile(fd, res);
+	if (!res)
 		return (NULL);
-	if (check_new_line(str) == 0)
-	{
-		str = ft_read(str, fd);
-	}
-	if (!str)
-		return (NULL);
-	line = get_line(str);
-	str = get_rest(str);
+	line = readline(res);
+	res = readnext(res);
 	return (line);
 }

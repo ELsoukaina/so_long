@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 19:27:18 by nmoussam          #+#    #+#             */
-/*   Updated: 2022/06/25 21:10:26 by sel-jala         ###   ########.fr       */
+/*   Created: 2022/06/26 22:12:14 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/06/26 22:12:16 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_check_element_map(char **map, int nb_line)
 		{
 			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'C' \
 			&& map[i][j] != 'E' && map[i][j] != 'P' && map[i][j] != '\n')
-				ft_print_message_error("Error\n Invalid Element of map\n");
+				ft_print_message_error("Error\n invalid elements\n");
 			j++;
 		}
 		i++;
@@ -56,7 +56,7 @@ void	ft_check_player(char **map, int nb_lines, t_map *data)
 		i++;
 	}
 	if (player != 1)
-		ft_print_message_error("Error\n The Map must have one Player\n");
+		ft_print_message_error("Error\n So_long must have one Player\n");
 }
 
 void	ft_check_collectible(char **map, int nb_lines, t_map *data)
